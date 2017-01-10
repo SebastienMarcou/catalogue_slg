@@ -1,0 +1,35 @@
+
+<table class="tx-catalogue-slg" >
+	<tr>
+		<td>
+			<f:translate key="tx_catalogueslg_domain_model_produit.nom" />
+		</td>
+		<td>
+		{produit.nom}
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<f:translate key="tx_catalogueslg_domain_model_produit.description" />
+		</td>
+		<td>
+		{produit.description}
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<f:translate key="tx_catalogueslg_domain_model_produit.date_sortie" />
+		</td>
+		<td>
+		{produit.dateSortie -> f:format.date()}
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<f:translate key="tx_catalogueslg_domain_model_produit.image" />
+		</td>
+		<td>
+				<f:image src="{produit.image.originalResource.publicUrl}" width="200"/>
+		</td>
+	</tr>
+</table>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2017-01-03T14:52:09Z" product-name="catalogue_slg">
+		<header/>
+		<body>
+			<trans-unit id="nom.description">
+				<source>nom</source>
+			</trans-unit>
+			<trans-unit id="description.description">
+				<source>description</source>
+			</trans-unit>
+			<trans-unit id="date_sortie.description">
+				<source>dateSortie</source>
+			</trans-unit>
+			<trans-unit id="image.description">
+				<source>image</source>
+			</trans-unit>
+			<trans-unit id="categorie.description">
+				<source>categorie</source>
+			</trans-unit>
+			<trans-unit id="marchands.description">
+				<source>marchands</source>
+			</trans-unit>
+			<trans-unit id="point_de_vente.description">
+				<source>pointDeVente</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>
