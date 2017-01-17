@@ -17,27 +17,34 @@ Otherwise your changes will be overwritten the next time you save the extension 
 
 <f:flashMessages />
 
-<table  class="tx_catalogueslg" >
-	<tr>
-		<th><f:translate key="tx_catalogueslg_domain_model_produit.nom" /></th>
-		<th><f:translate key="tx_catalogueslg_domain_model_produit.description" /></th>
-		<th><f:translate key="tx_catalogueslg_domain_model_produit.date_sortie" /></th>
-		<th><f:translate key="tx_catalogueslg_domain_model_produit.image" /></th>
-		<th> </th>
-		<th> </th>
-	</tr>
 
+
+
+<div  class="tx_catalogueslg" >
 	<f:for each="{produits}" as="produit">
-		<tr>
-			<td><f:link.action action="show" arguments="{produit : produit}"> {produit.nom}</f:link.action></td>
-			<td><f:link.action action="show" arguments="{produit : produit}"> {produit.description}</f:link.action></td>
-			<td><f:link.action action="show" arguments="{produit : produit}"> {produit.dateSortie -> f:format.date()}</f:link.action></td>
-			<td><f:link.action action="show" arguments="{produit : produit}"> {produit.image.originalResource.name}</f:link.action></td>
-			<td><f:link.action action="edit" arguments="{produit : produit}">Edit</f:link.action></td>
-			<td><f:link.action action="delete" arguments="{produit : produit}">Delete</f:link.action></td>
-		</tr>
-	</f:for>
-</table>
 
+
+	<div class="card col-sm-12 col-md-6" >
+		<f:image image="{produit.image}"  class="card-img-top" width="150px"/>
+		<div class="card-block">
+			<h4 class="card-title">
+				<f:link.action action="show" arguments="{Produit : produit}"> {produit.nom}</f:link.action>
+			</h4>
+			<p class="card-text">
+				<f:format.html> {produit.description} </f:format.html>
+			</p>
+			   <div class="card-footer text-muted">
+			    {produit.dateSortie -> f:format.date()}
+			  </div>
+		</div>
+	</div>
+
+
+	</f:for>
+
+	<div class="column col-sm-12">
 <f:link.action action="new">New Produit</f:link.action>
+</div>
+</div>
+
 </f:section>

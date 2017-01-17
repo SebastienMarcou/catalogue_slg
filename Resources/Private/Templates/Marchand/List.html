@@ -17,35 +17,29 @@ Otherwise your changes will be overwritten the next time you save the extension 
 
 <f:flashMessages />
 
-<table  class="tx_catalogueslg" >
-	<tr>
-		<th><f:translate key="tx_catalogueslg_domain_model_marchand.nom" /></th>
-		<th><f:translate key="tx_catalogueslg_domain_model_marchand.email" /></th>
-		<th><f:translate key="tx_catalogueslg_domain_model_marchand.site" /></th>
-		<th><f:translate key="tx_catalogueslg_domain_model_marchand.telephone" /></th>
-		<th><f:translate key="tx_catalogueslg_domain_model_marchand.image" /></th>
-		<th><f:translate key="tx_catalogueslg_domain_model_marchand.adresse" /></th>
-		<th><f:translate key="tx_catalogueslg_domain_model_marchand.code_postal" /></th>
-		<th><f:translate key="tx_catalogueslg_domain_model_marchand.ville" /></th>
-		<th> </th>
-		<th> </th>
-	</tr>
-
+<div  class="tx_catalogueslg" >
 	<f:for each="{marchands}" as="marchand">
-		<tr>
-			<td><f:link.action action="show" arguments="{marchand : marchand}"> {marchand.nom}</f:link.action></td>
-			<td><f:link.action action="show" arguments="{marchand : marchand}"> {marchand.email}</f:link.action></td>
-			<td><f:link.action action="show" arguments="{marchand : marchand}"> {marchand.site}</f:link.action></td>
-			<td><f:link.action action="show" arguments="{marchand : marchand}"> {marchand.telephone}</f:link.action></td>
-			<td><f:link.action action="show" arguments="{marchand : marchand}"> {marchand.image.originalResource.name}</f:link.action></td>
-			<td><f:link.action action="show" arguments="{marchand : marchand}"> {marchand.adresse}</f:link.action></td>
-			<td><f:link.action action="show" arguments="{marchand : marchand}"> {marchand.codePostal}</f:link.action></td>
-			<td><f:link.action action="show" arguments="{marchand : marchand}"> {marchand.ville}</f:link.action></td>
-			<td><f:link.action action="edit" arguments="{marchand : marchand}">Edit</f:link.action></td>
-			<td><f:link.action action="delete" arguments="{marchand : marchand}">Delete</f:link.action></td>
-		</tr>
+
+
+	<div class="card col-sm-12 col-md-6" >
+		<f:image image="{marchand.image}"  class="card-img-top" width="150px"/>
+		<div class="card-block">
+			<h4 class="card-title">
+				<f:link.action action="show" arguments="{marchand : marchand}"> {marchand.nom} | {marchand.email}</f:link.action>
+			</h4>
+			<p class="card-text">
+				<f:format.html> {marchand.telephone} </f:format.html>
+			</p>
+			<p class="card-text">
+				<f:format.html> {marchand.adresse}, {marchand.codePostal} {marchand.ville} </f:format.html>
+			</p>
+			 <a href="http://{marchand.site}" class="card-link">{marchand.site}</a>
+		</div>
+	</div>
+
+
 	</f:for>
-</table>
+</div>
 
 <f:link.action action="new">New Marchand</f:link.action>
 </f:section>

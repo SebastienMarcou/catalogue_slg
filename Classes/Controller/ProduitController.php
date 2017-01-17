@@ -71,6 +71,8 @@ class ProduitController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControll
      */
     public function focusAction()
     {
+        $produits = $this->produitRepository->findAll();
+        $this->view->assign('produits', $produits);
         
     }
 
